@@ -3,10 +3,7 @@ pipeline {
   stages {
     stage('Build & Test') {
       agent {
-        node {
           label 'docker'
-        }
-
       }
       steps {
         sh 'mvn -Dmaven.test.failure.ignore clean package'
@@ -16,10 +13,7 @@ pipeline {
 
     stage('Report & Publish') {
       agent {
-        node {
           label 'docker'
-        }
-
       }
       steps {
         unstash 'Restore files previously stashed'
