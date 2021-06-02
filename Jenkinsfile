@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        sh '''cd beginning-jenkins-blue-ocean/Ch03/example-maven-project
+        sh '''sleep 1000
 mvn -Dmaven.test.failure.ignore clean package'''
         stash(name: 'build-test-artifacts', includes: '**/target/surefire-reports/TEST-*.xml,target/*.jar')
       }
