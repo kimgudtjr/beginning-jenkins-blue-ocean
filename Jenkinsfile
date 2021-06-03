@@ -12,7 +12,7 @@ pipeline {
         sh '''cd Ch03/example-maven-project/
 mvn -Dmaven.test.failure.ignore clean package
 sleep('''
-        stash(name: 'build-test-artifacts', includes: '/home/jenkins/Ch03/example-maven-project/**/target/surefire-reports/TEST-*.xml,target/*.jar')
+        stash(name: 'build-test-artifacts', includes: 'Ch03/example-maven-project/**/target/surefire-reports/TEST-*.xml,target/*.jar')
       }
     }
 
