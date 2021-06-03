@@ -25,9 +25,9 @@ mvn -Dmaven.test.failure.ignore clean package'''
       steps {
         sh 'cd Ch03/example-maven-project/'
         unstash 'build-test-artifacts'
+        sh 'sleep 10000'
         junit '**/target/surefire-reports/TEST-*.xml'
         archiveArtifacts 'target/*.jar'
-        sh 'sleep 10000'
       }
     }
 
