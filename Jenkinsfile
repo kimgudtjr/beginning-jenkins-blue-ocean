@@ -27,6 +27,7 @@ mvn -Dmaven.test.failure.ignore clean package'''
         unstash 'build-test-artifacts'
         junit '**/target/surefire-reports/TEST-*.xml'
         archiveArtifacts(artifacts: 'target/*.jar', onlyIfSuccessful: true)
+        sh 'sleep 10000'
       }
     }
 
